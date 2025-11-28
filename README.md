@@ -1,124 +1,195 @@
 🏠 MortgageMaster (Python)
 
-A sleek, data-driven mortgage calculator built with Streamlit
+A high-precision mortgage analysis suite built with Streamlit
 
-MortgageMaster is your command center for decoding mortgage payments with clarity, precision, and zero nonsense. It transforms raw numbers into actionable insights — monthly payments, amortization schedules, interest breakdowns — all wrapped in an elegant and high-performance Streamlit dashboard.
+MortgageMaster is a professional-grade mortgage calculation platform that generates accurate monthly payments, full amortization schedules, tax/insurance impacts, and exportable reports (CSV + PDF). Designed for financial clarity and built for real-world use cases.
 
-🚀 Features
-🎛️ Intuitive Input Panel
+🚀 Key Features
+📌 1. Smart Mortgage Calculator
 
-Select your currency (₹, $, €, £, ¥).
+Computes:
 
-Enter home price, down payment, interest rate, and loan term.
+Principal & Interest
 
-Real-time calculation of down payment percentage.
+Property tax (monthly)
 
-Add-on cost modules:
+Home insurance (monthly)
 
-Annual property tax
+HOA fees
 
-Annual insurance
+Accepts multiple currencies (₹, $, €, £, ¥)
 
-Monthly HOA fees
+Calculates down payment percentage instantly
 
-📊 Dynamic Output Dashboard
+Supports loan terms from 1 to 50 years
 
-Highlighted monthly payment figure with bold visual emphasis.
+📊 2. Interactive Visual Insights
 
-Donut chart breakdown (Principal & Interest, Property Tax, Insurance, HOA).
+Beautiful Altair donut chart showing payment breakdown
 
 Summary KPI metrics:
 
 Loan Amount
 
-Total Interest
+Total Interest Paid
 
-Total Cost of Mortgage
+Total Cost of Loan
 
-📉 Full Amortization Schedule
+📉 3. Full Amortization Table
 
-Month-by-month:
+Month-by-month schedule including:
+
+Principal Payment
+
+Interest Payment
+
+Cumulative Interest
+
+Remaining Balance
+
+Fully formatted and scrollable
+
+Expandable UI element
+
+📄 4. Export Options
+CSV Export
+
+1-click export of entire amortization schedule
+
+PDF Export (Professional Report)
+
+Auto-generated PDF with:
+
+Title section
+
+Summary table
+
+Full amortization table
+
+Styled using ReportLab
+
+Professional formatting
+
+Finance-ready deliverable for clients or documentation
+
+💡 5. Modern UI / UX
+
+Wide layout for maximum readability
+
+Styled metric cards
+
+Clean typography
+
+Responsive layout across devices
+
+Built-in section dividers & spacing
+
+🧠 How the App Works
+Mortgage Formula
+
+Uses the industry-standard loan amortization formula:
+
+Monthly Payment (P&I):
+
+𝑀
+=
+𝑃
+⋅
+𝑟
+(
+1
++
+𝑟
+)
+𝑛
+(
+1
++
+𝑟
+)
+𝑛
+−
+1
+M=P⋅
+(1+r)
+n
+−1
+r(1+r)
+n
+	​
+
+
+Where:
+
+P = Principal
+
+r = Monthly interest rate
+
+n = Number of payments
+
+Amortization Loop
+
+Each month, the model computes:
+
+Interest due
 
 Principal paid
 
-Interest paid
+Updated balance
 
-Cumulative interest
+Running total interest
 
-Remaining balance
+PDF Generation Workflow
 
-Expandable table view.
+Creates a full PDF in memory using BytesIO
 
-Downloadable CSV export.
+Styled tables with alternating colors
 
-✨ Modern UI Enhancements
+Exports on demand
 
-Custom metric cards
-
-Wide layout configuration
-
-Clean typography and consistent styling
-
-Responsive two-column structure
-
-🧮 Tech Stack
-Technology	Purpose
-Python	Core logic
-Streamlit	Interactive web app
-Pandas	Data wrangling + amortization schedule
-NumPy	Computations
-Altair	Donut visualization
 📁 Project Structure
 📂 MortgageMaster
-│── app.py              # Main Streamlit app
-│── README.md           # Project documentation
-│── requirements.txt     # Dependencies (optional)
+│── app.py                     # Main Streamlit application
+│── README.md                  # Documentation
+│── requirements.txt            # Dependencies (recommended)
 
-▶️ How to Run
-1. Clone Repo
+🔧 Installation & Setup
+1. Clone the Repo
 git clone <your-repo-url>
 cd MortgageMaster
 
 2. Install Dependencies
-pip install -r requirements.txt
-
-Required packages:
 streamlit
 pandas
 numpy
 altair
+reportlab
 
-3. Launch App
+
+Or via:
+
+pip install -r requirements.txt
+
+3. Run the App
 streamlit run app.py
 
+📤 Exported Outputs
+Format	Contents	Purpose
+CSV	Full amortization schedule	Excel/spreadsheet users
+PDF Report	Summary + full schedule	Clients, documentation, printing
+🖼 UI Overview
 
-Your dashboard opens instantly in your browser. No server config. No fluff.
+Clean header
 
-📸 Screenshots (Optional)
+Two-column layout (Inputs → Results)
 
-Add your own screenshots here for extra visual polish.
+Donut visualization
 
-🧠 How It Works (Under the Hood)
+Expander-based schedule table
 
-Calculates principal, monthly interest rate, and number of payments.
+Footer with developer signature
 
-Uses standard amortization formula for principal+interest.
+🧑‍💻 Author
 
-Builds a full amortization schedule iteratively.
-
-Renders UI + charts dynamically based on user input.
-
-📤 Export Options
-
-You can export the amortization schedule with a single click:
-
-✔ CSV Download
-
-✔ Formatted currency columns
-
-✔ Scrollable clean table
-
-✨ Author
-
-🧑‍💻 Varsh Vishwakarma
+Varsh Vishwakarma
 AI • ML • DL • Data Science • Cloud • Full-Stack ML Developer
